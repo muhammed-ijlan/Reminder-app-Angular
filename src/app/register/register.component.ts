@@ -11,8 +11,8 @@ import { DataService } from '../data.service';
 export class RegisterComponent implements OnInit {
   //register form model
   registerForm = this.fb.group({
-    uname: ['', [Validators.pattern('[a-zA-Z ]*')]],
-    uid: ['', Validators.required, Validators.pattern('[a-zA-Z0-9]*')],
+    uname: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
+    uid: ['', Validators.required, Validators.pattern('[0-9]*')],
     password: ['', Validators.required, Validators.pattern('[a-zA-Z0-9]*')],
   });
 

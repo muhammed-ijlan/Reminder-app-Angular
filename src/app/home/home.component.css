@@ -1,0 +1,56 @@
+div .row h1 {
+  color: white;
+  font-size: 150px;
+  margin-top: 8rem;
+}
+div .row p {
+  margin-top: 1.5rem;
+  font-size: 20px;
+  color: white;
+}
+div .row p b {
+  font-size: 30px;
+  color: #5aa5f6;
+}
+.btn-login {
+  width: 200px;
+  height: 60px;
+  border: none;
+  color: white;
+  background-color: #1268c5;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 0 #f9e506;
+  transition: ease-out 0.3s;
+  font-size: 1.5rem;
+  outline: none;
+}
+.btn-signup:hover {
+  box-shadow: inset 300px 0 0 0 #f9e506;
+  cursor: pointer;
+}
+.btn-login:hover {
+  box-shadow: inset 300px 0 0 0 #f9e506;
+  cursor: pointer;
+}
+.buttons span {
+  font-size: 30px;
+  color: white;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.btn-signup {
+  width: 200px;
+  height: 60px;
+  border: 1px solid #222;
+  color: white;
+  background-color: #1268c5;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 0 #f9e506;
+  transition: ease-out 0.3s;
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.buttons {
+  margin-top: 3rem;
+}

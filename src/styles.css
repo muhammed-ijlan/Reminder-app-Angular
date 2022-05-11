@@ -6,4 +6,5 @@ body {
   background-size: cover; */
   height: 100vh;
   background: linear-gradient(15deg, #32325d 49.9%, #007bff 50%);
+  background-repeat: repeat;
 }
