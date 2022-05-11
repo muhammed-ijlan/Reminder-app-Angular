@@ -2,15 +2,15 @@
     <div class="row main">
         <div class="panel-heading">
             <div class="panel-title text-center">
-                <h1 class="title">Register</h1>
+                <h1 class="title">Log In</h1>
                 <hr />
             </div>
 
             <div class="main-login main-center">
 
-                <form class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="register()">
+                <form class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="login()">
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="name" class="cols-sm-2 control-label">Your Name</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
@@ -19,13 +19,13 @@
                                 <input type="text" class="form-control" name="uname" formControlName="uname" id="uname"
                                     placeholder="Enter your Name" />
                             </div>
-                            <div *ngIf="(this.registerForm.get('uname')?.touched || this.registerForm.get('uname')?.dirty) && this.registerForm.get('uname')?.errors"
+                            <div *ngIf="(this.loginForm.get('uname')?.touched || this.loginForm.get('uname')?.dirty) && this.loginForm.get('uname')?.errors"
                                 style="color: red;">
                                 invalid User Name
                             </div>
 
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
                         <label class="cols-sm-2 control-label">User ID</label>
@@ -38,7 +38,7 @@
                             </div>
                         </div>
 
-                        <div *ngIf="(this.registerForm.get('uid')?.touched || this.registerForm.get('uid')?.dirty) && this.registerForm.get('uid')?.errors"
+                        <div *ngIf="(this.loginForm.get('uid')?.touched || this.loginForm.get('uid')?.dirty) && this.loginForm.get('uid')?.errors"
                             style="color: red;">
                             invaid User Id
                         </div>
@@ -55,17 +55,17 @@
                                     id="password" placeholder="Enter your Password" />
                             </div>
                         </div>
-                        <div *ngIf="(this.registerForm.get('password')?.touched || this.registerForm.get('password')?.dirty) && this.registerForm.get('password')?.errors"
+                        <div *ngIf="(this.loginForm.get('password')?.touched || this.loginForm.get('password')?.dirty) && this.loginForm.get('password')?.errors"
                             style="color:red ;">
                             invalid Password
                         </div>
                     </div>
 
                     <div class="form-group ">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block login-button">LogIn</button>
                     </div>
                     <div class="login-register">
-                        <a routerLink="/login">Login</a>
+                        <a routerLink="/register">Register</a>
                     </div>
                 </form>
             </div>
