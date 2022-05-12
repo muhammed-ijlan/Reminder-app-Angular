@@ -9,6 +9,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class DashboardComponent implements OnInit {
   // date
   loginDate: any;
+  uname: any;
 
   // event form modal
   eventForm = this.fb.group({
@@ -17,8 +18,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.loginDate = new Date();
+    this.uname = JSON.parse(localStorage.getItem('currentUname') || '');
   }
-
   ngOnInit(): void {}
 
   //event
