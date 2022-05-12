@@ -1,0 +1,79 @@
+.container {
+  padding-left: 25rem;
+}
+
+.main {
+  margin-top: 40px;
+}
+
+h1.title {
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+hr {
+  width: 100%;
+  color: #fff;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+  font-size: 11px;
+  padding-top: 3px;
+}
+
+.main-login {
+  background-color: #fff;
+  /* shadows and rounded borders */
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.main-center {
+  margin-top: 30px;
+  margin: 0 auto;
+  width: 400px;
+  padding: 40px 40px;
+}
+
+.login-button {
+  margin-top: 5px;
+}
+
+.login-register {
+  font-size: 11px;
+  text-align: center;
+}
+.btn-login {
+  width: 399px;
+  height: 40px;
+  border: none;
+  color: white;
+  background-color: #1268c5;
+  border-radius: 3px;
+  transition: 0.3s;
+  font-size: 1rem;
+  outline: none;
+}
+.btn-login:hover {
+  background-color: #185596;
+  cursor: pointer;
+}
+
+.buttons {
+  margin-top: 1rem;
+}

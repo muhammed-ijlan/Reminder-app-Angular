@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row main">
+        <div class="panel-heading">
+            <div class="panel-title text-center">
+                <h5 class="text-center text-warning">{{loginDate|date:'fullDate'|uppercase}}
+                </h5>
+                <h1 class="title">Welcome Samuel</h1>
+                <hr />
+            </div>
+
+            <div class="main-login main-center">
+
+                <form class="form-horizontal" [formGroup]="eventForm" (ngSubmit)="addEvent()">
+
+
+                    <div class="form-group">
+                        <label class="cols-sm-2 control-label">Remainder</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon mr-2"><i class="fa fas fa-solid fa-bell"
+                                        aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" formControlName="event" name="event" id="event"
+                                    placeholder="Enter Event" />
+                            </div>
+                        </div>
+
+                        <div *ngIf="(this.eventForm.get('uid')?.touched || this.eventForm.get('uid')?.dirty) && this.eventForm.get('uid')?.errors"
+                            style="color: red;">
+                            invaid User Id
+                        </div>
+
+                    </div>
+
+                    <div class="form-group ">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="buttons row">
+        <button routerLink="/event" class="btn-login">My Events</button>
+
+    </div>
+
+</div>
+
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
