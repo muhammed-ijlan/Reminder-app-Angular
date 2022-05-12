@@ -8,10 +8,21 @@ import { DataService } from '../data.service';
 })
 export class EventsComponent implements OnInit {
   events: any;
-  acno: any;
+  uid: any;
 
   constructor(private ds: DataService) {
-    // this.acno = JSON.parse(localStorage.getItem('currentUid') || '');
+    this.uid = JSON.parse(localStorage.getItem('currentUid') || '');
+
+    this.ds.events(this.uid).subscribe(
+      (result: any) => {
+        if (result) {
+          this.events = result.events;
+        }
+      },
+      (result: any) => {
+        alert(result.error.message);
+      }
+    );
   }
 
   ngOnInit(): void {}

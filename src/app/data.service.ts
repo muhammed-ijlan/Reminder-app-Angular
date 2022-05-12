@@ -33,5 +33,10 @@ export class DataService {
     return this.http.post('http://localhost:3000/dashboard', body);
   }
 
-  events() {}
+  events(uid: any) {
+    const body = {
+      uid,
+    };
+    return this.http.post('http://localhost:3000/event', body);
+  }
 }
