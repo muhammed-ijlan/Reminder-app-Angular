@@ -12,8 +12,8 @@ export class RegisterComponent implements OnInit {
   //register form model
   registerForm = this.fb.group({
     uname: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
-    uid: ['', Validators.required, Validators.pattern('[0-9]*')],
-    password: ['', Validators.required, Validators.pattern('[a-zA-Z0-9]*')],
+    uid: ['', [Validators.required, Validators.pattern('[0-9]*')]],
+    password: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]*')]],
   });
 
   constructor(
@@ -23,12 +23,26 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
-  uname = this.registerForm.value.uname;
 
   register() {
     const uname = this.registerForm.value.uname;
     const uid = this.registerForm.value.uid;
     const password = this.registerForm.value.password;
-    console.log('Register button clicked');
+
+    if (this.registerForm.valid) {
+      this.ds.register(uname, uid, password).subscribe(
+        (result: any) => {
+          if (result) {
+            alert(result.message);
+            this.router.navigateByUrl('/login');
+          }
+        },
+        (result: any) => {
+          alert(result.error.message);
+        }
+      );
+    } else {
+      alert('Invalid form');
+    }
   }
 }
