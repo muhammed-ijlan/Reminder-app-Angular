@@ -22,8 +22,8 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor="let event of events">
-                                    <td>{{event.item}}</td>
-                                    <td>{{event.status}}</td>
+                                    <td>{{event.eventName}}</td>
+                                    <td>On Going</td>
                                     <td>
                                         <button (click)="updateEvent()" class="btn btn-success ms-1"><i
                                                 class="fa-solid fa-pen-to-square"></i></button>
@@ -31,27 +31,7 @@
                                                 class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
-                                <!-- <tr>
-                                    <td>Renew car insurance</td>
-                                    <td>In progress</td>
-                                    <td>
-                                        <button (click)="updateEvent()" class="btn btn-success ms-1"><i
-                                                class="fa-solid fa-pen-to-square"></i></button>
-                                        <button (click)="deleteEvent()" class="btn btn-danger m-2"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </td>
-                                </tr> -->
-                                <!-- <tr>
 
-                                    <td>Sign up for online course</td>
-                                    <td>In progress</td>
-                                    <td>
-                                        <button (click)="updateEvent()" class="btn btn-success ms-1"><i
-                                                class="fa-solid fa-pen-to-square"></i></button>
-                                        <button (click)="deleteEvent()" class="btn btn-danger m-2"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </td>
-                                </tr> -->
                             </tbody>
                         </table>
 

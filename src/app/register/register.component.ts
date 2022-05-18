@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
       this.ds.register(uname, uid, password).subscribe(
         (result: any) => {
           if (result) {
-            alert(result.message);
+            // alert(result.message);
             this.router.navigateByUrl('login');
           }
         },

@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
             );
 
             localStorage.setItem('token', JSON.stringify(result.token));
-            alert(result.message);
+            // alert(result.message);
             this.router.navigateByUrl('dashboard');
           }
         },

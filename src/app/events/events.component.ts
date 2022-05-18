@@ -16,6 +16,8 @@ export class EventsComponent implements OnInit {
     this.ds.events(this.uid).subscribe(
       (result: any) => {
         if (result) {
+          console.log(result.events);
+
           this.events = result.events;
         }
       },
@@ -28,10 +30,10 @@ export class EventsComponent implements OnInit {
   ngOnInit(): void {}
 
   deleteEvent() {
-    alert('Event Deleted');
+    return confirm('Are you sure you want to delete this item?');
   }
 
   updateEvent() {
-    alert('Event Updated');
+    const updatedEvent = prompt('Update Your event');
   }
 }
