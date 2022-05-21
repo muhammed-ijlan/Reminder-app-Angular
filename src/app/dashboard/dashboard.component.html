@@ -1,6 +1,8 @@
 <app-navbar></app-navbar>
-<button style="margin-left: 88%; position: absolute;" class="btn-danger btn ">Delete My Account</button>
-<app-delete-confirm></app-delete-confirm>
+<button (click)="deleteFromParent()" style="margin-left: 88%; position: absolute;" class="btn-danger btn ">Delete My
+    Account</button>
+<app-delete-confirm (onDelete)="onDelete($event)" (onCancel)="onCancel()" [item]="userId">
+</app-delete-confirm>
 
 <div class="container">
     <div class="row main">

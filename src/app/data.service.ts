@@ -39,4 +39,11 @@ export class DataService {
     };
     return this.http.post('http://localhost:3000/event', body);
   }
+
+  deleteAcno(uid: any) {
+    return this.http.delete('http://localhost:3000/deleteUid/' + uid);
+  }
+  deleteEvent(uid: any, id: any) {
+    return this.http.delete(`http://localhost:3000/event/delete/${uid}/${id}`);
+  }
 }
