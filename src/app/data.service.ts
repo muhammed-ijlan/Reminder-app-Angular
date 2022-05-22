@@ -1,11 +1,26 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+const options = {
+  headers: new HttpHeaders(),
+};
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
   constructor(private http: HttpClient) {}
+
+  getOptions() {
+    let token = JSON.parse(localStorage.getItem('token') || '');
+    let headers = new HttpHeaders();
+
+    if (token) {
+      headers = headers.append('access-token', token);
+      options.headers = headers;
+    }
+    return options;
+  }
 
   //register
   register(uname: any, uid: any, password: any) {
@@ -30,14 +45,22 @@ export class DataService {
       uid,
       events: data,
     };
-    return this.http.post('http://localhost:3000/dashboard', body);
+    return this.http.post(
+      'http://localhost:3000/dashboard',
+      body,
+      this.getOptions()
+    );
   }
 
   events(uid: any) {
     const body = {
       uid,
     };
-    return this.http.post('http://localhost:3000/event', body);
+    return this.http.post(
+      'http://localhost:3000/event',
+      body,
+      this.getOptions()
+    );
   }
 
   deleteAcno(uid: any) {
@@ -45,7 +68,10 @@ export class DataService {
   }
 
   deleteEvent(uid: any, id: any) {
-    return this.http.delete(`http://localhost:3000/event/delete/${uid}/${id}`);
+    return this.http.delete(
+      `http://localhost:3000/event/delete/${uid}/${id}`,
+      this.getOptions()
+    );
   }
 
   // editEvent(uid: any, id: any, data: any) {
