@@ -51,7 +51,26 @@ export class EventsComponent implements OnInit {
     }
   }
 
-  updateEvent() {
-    const updatedEvent = prompt('Update Your event');
-  }
+  // updateEvent(event: any) {
+  //   const updatedEvent = prompt('Update Your event');
+
+  //   const id = event.id;
+  //   this.uid = JSON.parse(localStorage.getItem('currentUid') || '');
+
+  //   if (updatedEvent) {
+  //     this.ds.editEvent(this.uid, id, updatedEvent.valueOf()).subscribe(
+  //       (result: any) => {
+  //         if (result) {
+  //           alert(result.message);
+  //           window.location.reload();
+  //         }
+  //       },
+  //       (result: any) => {
+  //         alert(result.error.message);
+  //       }
+  //     );
+  //   } else {
+  //     this.router.navigateByUrl('/event');
+  //   }
+  // }
 }

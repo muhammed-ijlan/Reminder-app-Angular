@@ -25,8 +25,8 @@
                             <div class="input-group">
                                 <span class="input-group-addon mr-2"><i class="fa fas fa-solid fa-bell"
                                         aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" formControlName="event" name="event" id="event"
-                                    placeholder="Enter Event" />
+                                <input type="text" class="form-control" formControlName="event" #event name="event"
+                                    id="event" placeholder="Enter Event" />
                             </div>
                         </div>
 
@@ -38,7 +38,8 @@
                     </div>
 
                     <div class="form-group ">
-                        <button class="btn btn-primary btn-lg btn-block login-button">Add</button>
+                        <button (click)="event.value=''"
+                            class="btn btn-primary btn-lg btn-block login-button">Add</button>
                     </div>
                 </form>
             </div>
