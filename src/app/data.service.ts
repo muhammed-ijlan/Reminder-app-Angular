@@ -64,7 +64,10 @@ export class DataService {
   }
 
   deleteAcno(uid: any) {
-    return this.http.delete('http://localhost:3000/deleteUid/' + uid);
+    return this.http.delete(
+      'http://localhost:3000/deleteUid/' + uid,
+      this.getOptions()
+    );
   }
 
   deleteEvent(uid: any, id: any) {
@@ -73,14 +76,4 @@ export class DataService {
       this.getOptions()
     );
   }
-
-  // editEvent(uid: any, id: any, data: any) {
-  //   const body = {
-  //     eventName: data,
-  //   };
-  //   return this.http.patch(
-  //     `http://localhost:3000/event/edit/${uid}/${id}`,
-  //     body
-  //   );
-  // }
 }

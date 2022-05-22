@@ -34,18 +34,22 @@ export class DashboardComponent implements OnInit {
 
   //event
   addEvent() {
-    const event = this.eventForm.value.event;
+    if (this.eventForm.valid) {
+      const event = this.eventForm.value.event;
 
-    this.ds.addEvent(this.uid, event).subscribe(
-      (result: any) => {
-        if (result) {
-          alert(result.message);
+      this.ds.addEvent(this.uid, event).subscribe(
+        (result: any) => {
+          if (result) {
+            alert(result.message);
+          }
+        },
+        (result: any) => {
+          alert(result.error.message);
         }
-      },
-      (result: any) => {
-        alert(result.error.message);
-      }
-    );
+      );
+    } else {
+      alert('Please Enter Any Event to continue');
+    }
   }
 
   deleteFromParent() {
